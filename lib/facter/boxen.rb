@@ -19,6 +19,7 @@ end
 facts["luser"]          = config.user
 
 facts["boxen_repo_url_template"] = ENV['BOXEN_REPO_URL_TEMPLATE'] || "https://github.com/%s"
+puts "Setting boxen_url_template to #{facts["boxen_repo_url_template"]}"
 
 Dir["#{config.homedir}/config/facts/*.json"].each do |file|
   facts.merge! JSON.parse File.read file
