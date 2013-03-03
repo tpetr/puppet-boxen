@@ -16,6 +16,10 @@ if config.respond_to? :reponame
   facts["boxen_reponame"] = config.reponame
 end
 
+if config.respond_to? :repohost
+  facts["boxen_repohost"] = config.repohost
+end
+
 facts["luser"]          = config.user
 
 facts["boxen_repo_url_template"] = ENV['BOXEN_REPO_URL_TEMPLATE'] || "https://github.com/%s"
